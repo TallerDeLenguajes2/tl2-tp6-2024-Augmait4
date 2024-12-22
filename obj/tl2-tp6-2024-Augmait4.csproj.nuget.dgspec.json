@@ -1,0 +1,75 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\augus\\OneDrive\\Documents\\Estudios Facultad\\Taller de Lenguajes II\\tl2-tp6-2024-Augmait4\\tl2-tp6-2024-Augmait4.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\augus\\OneDrive\\Documents\\Estudios Facultad\\Taller de Lenguajes II\\tl2-tp6-2024-Augmait4\\tl2-tp6-2024-Augmait4.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\augus\\OneDrive\\Documents\\Estudios Facultad\\Taller de Lenguajes II\\tl2-tp6-2024-Augmait4\\tl2-tp6-2024-Augmait4.csproj",
+        "projectName": "tl2-tp6-2024-Augmait4",
+        "projectPath": "C:\\Users\\augus\\OneDrive\\Documents\\Estudios Facultad\\Taller de Lenguajes II\\tl2-tp6-2024-Augmait4\\tl2-tp6-2024-Augmait4.csproj",
+        "packagesPath": "C:\\Users\\augus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\augus\\OneDrive\\Documents\\Estudios Facultad\\Taller de Lenguajes II\\tl2-tp6-2024-Augmait4\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\augus\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Data.SQLite": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
