@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\augus\\OneDrive\\Documents\\Estudios Facultad\\Taller de Lenguajes II\\tl2-tp6-2024-Augmait4\\tl2-tp6-2024-Augmait4.csproj": {}
+    "C:\\Users\\augus\\Documents\\Facultad\\Taller-de-Lenguaje-II\\tl2-tp6-2024-Augmait4\\tl2-tp6-2024-Augmait4.csproj": {}
   },
   "projects": {
-    "C:\\Users\\augus\\OneDrive\\Documents\\Estudios Facultad\\Taller de Lenguajes II\\tl2-tp6-2024-Augmait4\\tl2-tp6-2024-Augmait4.csproj": {
+    "C:\\Users\\augus\\Documents\\Facultad\\Taller-de-Lenguaje-II\\tl2-tp6-2024-Augmait4\\tl2-tp6-2024-Augmait4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\augus\\OneDrive\\Documents\\Estudios Facultad\\Taller de Lenguajes II\\tl2-tp6-2024-Augmait4\\tl2-tp6-2024-Augmait4.csproj",
+        "projectUniqueName": "C:\\Users\\augus\\Documents\\Facultad\\Taller-de-Lenguaje-II\\tl2-tp6-2024-Augmait4\\tl2-tp6-2024-Augmait4.csproj",
         "projectName": "tl2-tp6-2024-Augmait4",
-        "projectPath": "C:\\Users\\augus\\OneDrive\\Documents\\Estudios Facultad\\Taller de Lenguajes II\\tl2-tp6-2024-Augmait4\\tl2-tp6-2024-Augmait4.csproj",
+        "projectPath": "C:\\Users\\augus\\Documents\\Facultad\\Taller-de-Lenguaje-II\\tl2-tp6-2024-Augmait4\\tl2-tp6-2024-Augmait4.csproj",
         "packagesPath": "C:\\Users\\augus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\augus\\OneDrive\\Documents\\Estudios Facultad\\Taller de Lenguajes II\\tl2-tp6-2024-Augmait4\\obj\\",
+        "outputPath": "C:\\Users\\augus\\Documents\\Facultad\\Taller-de-Lenguaje-II\\tl2-tp6-2024-Augmait4\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\augus\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -67,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.402/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

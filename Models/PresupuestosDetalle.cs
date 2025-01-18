@@ -1,7 +1,7 @@
 public class PresupuestosDetalle
 {
     private int cantidad;
-    Productos producto;
+    private Productos producto;
 
     public PresupuestosDetalle(int cantidad, Productos producto)
     {

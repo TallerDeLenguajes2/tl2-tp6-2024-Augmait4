@@ -1,9 +1,10 @@
 @{
     ViewData["Title"] = "Gestion de Presupuesto";
 }
-<table class="table table-dark table-striped mt-4">
-    @foreach (var Presupuesto in Model)
-    {
+
+@foreach (var Presupuesto in Model)
+{
+    <table class="table table-dark table-striped mt-4">
         <thead>
             <tr>
                 <th scope="col">IdPresupuesto</th>
@@ -12,32 +13,33 @@
             </tr>
         </thead>
         <tbody>
-            {
             <tr>
                 <td>@Presupuesto.IdPresupuesto</td>
-                <td>@Presupuesto.nombreDestinatario</td>
-                <td>@Presupuesto.detalle</td>
-                @foreach (var Producto in @Presupuesto.Productos)
-                {
-                    <table>
-                        <thead>
-                            <tr>
-                                <th scope="col">IdProducto</th>
-                                <th scope="col">Descripcion</th>
-                                <th scope="col">Precio</th>
-                                <th scope="col" class="text-center">Acciones</th>
-                            </tr>
-                        </thead>
+                <td>@Presupuesto.NombreDestinatario</td>
+                <td>@Presupuesto.Detalle</td>
+                <table class="table table-dark table-striped mt-4">
+                    <thead>
+                        <tr>
+                            <th scope="col">IdProducto</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col" class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    @foreach (var detalle in @Presupuesto.Detalle)
+                    {
+
                         <tbody>
                             <tr>
-                                <td>@Producto.IdProducto</td>
-                                <td>@Producto.Descripcion</td>
-                                <td>@Producto.Precio</td>
+                                <td>@detalle.Producto.IdProducto</td>
+                                <td>@detalle.Producto.Descripcion</td>
+                                <td>@detalle.Producto.Precio</td>
                             </tr>
                         </tbody>
-                    </table>
-                }
+
+                    }
+                </table>
             </tr>
         </tbody>
-    }
-</table>
+    </table>
+}
