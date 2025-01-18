@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "Gestion de Presupuesto";
+}
+<table class="table table-dark table-striped mt-4">
+    @foreach (var Presupuesto in Model)
+    {
+        <thead>
+            <tr>
+                <th scope="col">IdPresupuesto</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Fecha de Creacion</th>
+            </tr>
+        </thead>
+        <tbody>
+            {
+            <tr>
+                <td>@Presupuesto.IdPresupuesto</td>
+                <td>@Presupuesto.nombreDestinatario</td>
+                <td>@Presupuesto.detalle</td>
+                @foreach (var Producto in @Presupuesto.Productos)
+                {
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">IdProducto</th>
+                                <th scope="col">Descripcion</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col" class="text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@Producto.IdProducto</td>
+                                <td>@Producto.Descripcion</td>
+                                <td>@Producto.Precio</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                }
+            </tr>
+        </tbody>
+    }
+</table>

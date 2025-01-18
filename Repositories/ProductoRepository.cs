@@ -107,7 +107,7 @@ public Productos GetById(int id)
     }
     public void Delete(int idProducto)
     {
-        string query = "DELETE FROM Producto WHERE idProducto = @idProducto;";
+        string query = "DELETE FROM Productos WHERE idProducto = @idProducto;";
         using (SqliteConnection connection = new SqliteConnection(_stringConnection))
         {
             connection.Open();

@@ -1,0 +1,28 @@
+@model Productos;
+@{
+    ViewData["Title"] = "Actualizar Producto";
+}
+<h1 class="text-center">
+    Menu De Modificacion
+</h1>
+<form class="row g-3" asp-action="Update" method="post">
+    <input type="hidden" asp-asp-for="IdProducto" />
+    <div class="col-md-6">
+        <label asp-for="Descripcion" class="form-label">Descripción</label>
+        <input asp-for="Descripcion" class="form-control" placeholder="Playstation 5">
+        <span asp-validation-for="Descripcion" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="Precio" class="form-label">Precio</label>
+        <input asp-for="Precio" class="form-control" placeholder="$">
+        <span asp-validation-for="Precio" class="text_danger"></span>
+    </div>
+    <div class="d-flex align-items-between">
+        <div class="col-1">
+            <button type="submit" class="btn btn-success">Actualizar</button>
+        </div>
+        <div class="col-1">
+            <a asp-action="Index" class="btn btn-danger">Cancelar</a>
+        </div>
+    </div>
+</form>

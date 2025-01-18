@@ -18,16 +18,32 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\augus\OneDrive\Documents\Estudios Facultad\Taller de Lenguajes II\tl2-tp6-2024-Augmait4
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/augus/OneDrive/Documents/Estudios Facultad/Taller de Lenguajes II/tl2-tp6-2024-Augmait4/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[C:/Users/augus/OneDrive/Documents/Estudios Facultad/Taller de Lenguajes II/tl2-tp6-2024-Augmait4/Views/Presupuesto/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3VwdWVzdG9cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/augus/OneDrive/Documents/Estudios Facultad/Taller de Lenguajes II/tl2-tp6-2024-Augmait4/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/Users/augus/OneDrive/Documents/Estudios Facultad/Taller de Lenguajes II/tl2-tp6-2024-Augmait4/Views/Presupuesto/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3VwdWVzdG9cRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/augus/OneDrive/Documents/Estudios Facultad/Taller de Lenguajes II/tl2-tp6-2024-Augmait4/Views/Producto/GetAll.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cR2V0QWxsLmNzaHRtbA==
+[C:/Users/augus/OneDrive/Documents/Estudios Facultad/Taller de Lenguajes II/tl2-tp6-2024-Augmait4/Views/Presupuesto/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3VwdWVzdG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/augus/OneDrive/Documents/Estudios Facultad/Taller de Lenguajes II/tl2-tp6-2024-Augmait4/Views/Presupuesto/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3VwdWVzdG9cVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/augus/OneDrive/Documents/Estudios Facultad/Taller de Lenguajes II/tl2-tp6-2024-Augmait4/Views/Producto/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/augus/OneDrive/Documents/Estudios Facultad/Taller de Lenguajes II/tl2-tp6-2024-Augmait4/Views/Producto/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/augus/OneDrive/Documents/Estudios Facultad/Taller de Lenguajes II/tl2-tp6-2024-Augmait4/Views/Producto/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/augus/OneDrive/Documents/Estudios Facultad/Taller de Lenguajes II/tl2-tp6-2024-Augmait4/Views/Shared/Error.cshtml]

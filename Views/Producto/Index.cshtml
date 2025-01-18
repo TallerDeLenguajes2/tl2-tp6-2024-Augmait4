@@ -2,9 +2,7 @@
     <div class="d-flex justify-content-between align-items-center">
         <h4 class="mb-0">Sección De Herramientas De Productos</h4>
         <div class="d-flex">
-            <button type="button" class="btn btn-danger btn-lg mx-2">Crear</button>
-            <button type="button" class="btn btn-warning btn-lg mx-2">Modificar</button>
-            <button type="button" class="btn btn-success btn-lg mx-2">Eliminar</button>
+            <a asp-action="Create" class="btn btn-primary btn-lg mx-2">Crear</a>
         </div>
     </div>
 </div>
@@ -14,6 +12,7 @@
             <th scope="col">IdProducto</th>
             <th scope="col">Descripcion</th>
             <th scope="col">Precio</th>
+            <th scope="col" class="text-center">Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -23,6 +22,14 @@
                 <td>@Producto.IdProducto</td>
                 <td>@Producto.Descripcion</td>
                 <td>@Producto.Precio</td>
+                <td class="text-center">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex m-auto">
+                            <a asp-action="Update" class="btn btn-warning btn mx-2">Modificar</a>
+                            <a asp-action="Delete" asp-route-id="@Producto.IdProducto" class="btn btn-danger btn mx-2">Eliminar</a>
+                        </div>
+                    </div>
+                </td>
             </tr>
         }
     </tbody>

@@ -19,12 +19,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
-app.MapControllerRoute(
-    name: "Productos",
-    pattern: "{controller=Producto}/{action=Producto}/{id?}");
+    pattern: "{controller=Producto}/{action=Index}/{id?}");
 app.Run();

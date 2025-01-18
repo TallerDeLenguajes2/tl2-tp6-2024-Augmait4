@@ -5,7 +5,6 @@ public class Productos
     private int precio;
 
     public Productos(){
-
     }
     public Productos(int idProducto, string descripcion, int precio){
         this.IdProducto = idProducto;
