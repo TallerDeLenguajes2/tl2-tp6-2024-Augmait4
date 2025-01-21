@@ -1,45 +1,82 @@
 @{
-    ViewData["Title"] = "Gestion de Presupuesto";
+    ViewData["Title"] = "Lista de Presupuestos";
 }
 
-@foreach (var Presupuesto in Model)
-{
-    <table class="table table-dark table-striped mt-4">
-        <thead>
-            <tr>
-                <th scope="col">IdPresupuesto</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Fecha de Creacion</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>@Presupuesto.IdPresupuesto</td>
-                <td>@Presupuesto.NombreDestinatario</td>
-                <td>@Presupuesto.Detalle</td>
-                <table class="table table-dark table-striped mt-4">
-                    <thead>
-                        <tr>
-                            <th scope="col">IdProducto</th>
-                            <th scope="col">Descripcion</th>
-                            <th scope="col">Precio</th>
-                            <th scope="col" class="text-center">Acciones</th>
-                        </tr>
-                    </thead>
-                    @foreach (var detalle in @Presupuesto.Detalle)
+@model List<Presupuestos>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Lista de Presupuestos</h2>
+
+    @if (Model == null || !Model.Any())
+    {
+        <div class="alert alert-warning text-center">
+            No hay presupuestos disponibles.
+        </div>
+    }
+    else
+    {
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col" class="text-center">Nombre</th>
+                    <th scope="col" class="text-center">Producto</th>
+                    <th scope="col" class="text-center">Cantidad</th>
+                    <th scope="col" class="text-center">Precio sin IVA</th>
+                    <th scope="col" class="text-center">Precio con IVA</th>
+                    <th scope="col" class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var Presupuestos in Model)
+                {
+                    var detalleCount = Presupuestos.Detalle.Count;
+                    bool tieneProductos = detalleCount > 0;
+
+                    // Si el presupuesto no tiene productos, muestra una fila vacía.
+                    if (!tieneProductos)
                     {
-
-                        <tbody>
-                            <tr>
-                                <td>@detalle.Producto.IdProducto</td>
-                                <td>@detalle.Producto.Descripcion</td>
-                                <td>@detalle.Producto.Precio</td>
-                            </tr>
-                        </tbody>
-
+                        <tr>
+                            <td class="align-middle text-center">@Presupuestos.NombreDestinatario</td>
+                            <td colspan="4" class="text-center"></td>
+                            <td class="align-middle text-center">
+                                <a asp-action="Update" asp-route-id="@Presupuestos.IdPresupuesto" class="btn btn-sm btn-warning">Editar</a>
+                                <a asp-action="Delete" asp-route-id="@Presupuestos.IdPresupuesto" class="btn btn-sm btn-danger" onclick="return confirm('¿Está seguro de eliminar este Presupuestos?');">Eliminar</a>
+                            </td>
+                        </tr>
                     }
-                </table>
-            </tr>
-        </tbody>
-    </table>
-}
+                    else
+                    {
+                        bool isFirstRow = true;
+                        foreach (var detalle in Presupuestos.Detalle)
+                        {
+                            <tr>
+                                @if (isFirstRow)
+                                {
+                                    <td rowspan="@detalleCount" class="align-middle text-center">@Presupuestos.NombreDestinatario</td>
+                                }
+
+                                <td class="align-middle">@detalle.Producto.Descripcion</td>
+                                <td class="align-middle text-center">@detalle.Cantidad</td>
+
+                                @if (isFirstRow)
+                                {
+                                    <td rowspan="@detalleCount" class="align-middle text-center">$@Presupuestos.MontoPresupuesto()</td>
+                                    <td rowspan="@detalleCount" class="align-middle text-center">$@Presupuestos.MontoPresupuestoConIVA()</td>
+                                    <td rowspan="@detalleCount" class="align-middle text-center">
+                                        <a asp-action="Update" asp-route-id="@Presupuestos.IdPresupuesto" class="btn btn-sm btn-warning">Editar</a>
+                                        <a asp-action="Delete" asp-route-id="@Presupuestos.IdPresupuesto" class="btn btn-sm btn-danger" onclick="return confirm('¿Está seguro de eliminar este Presupuestos?');">Eliminar</a>
+                                    </td>
+                                    isFirstRow = false;
+                                }
+                            </tr>
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+
+        <div class="text-center mt-4">
+            <a asp-action="Create" class="btn btn-success">Crear Nuevo Presupuesto</a>
+        </div>
+    }
+</div>

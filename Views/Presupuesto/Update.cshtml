@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Agregar producto a presupuesto";
+    var productos = ViewData["Productos"] as List<Productos>;
+}
+@model Presupuestos
+
+
+<form asp-action="Update" asp-route-id="@Model.IdPresupuesto" method="post">
+    <div class="form-group">
+        <label for="productoId">Seleccionar Producto:</label>
+        <select id="productoId" name="productoId" class="form-control">
+            @foreach (var producto in productos)
+            {
+                <option value="@producto.IdProducto">@producto.Descripcion - $@producto.Precio</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" class="form-control" min="1" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Agregar Producto</button>
+</form>

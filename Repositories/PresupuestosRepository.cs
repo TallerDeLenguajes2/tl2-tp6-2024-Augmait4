@@ -18,6 +18,8 @@ public interface IPresupuestosRepository
 public class PresupuestosRepository : IPresupuestosRepository
 {
     private readonly string _stringConnection;
+    private object idPresupuesto;
+
     public PresupuestosRepository(string stringConnection)
     {
         _stringConnection = stringConnection;
@@ -90,7 +92,7 @@ public class PresupuestosRepository : IPresupuestosRepository
         using (SqliteConnection connection = new SqliteConnection(_stringConnection))
         {
             connection.Open();
-            SqliteCommand commandDetalles = new SqliteCommand(@"DELETE FROM PresupuestoDetalles
+            SqliteCommand commandDetalles = new SqliteCommand(@"DELETE FROM PresupuestosDetalle
                                                             WHERE idPresupuesto = @idPresupuesto;", connection);
             commandDetalles.Parameters.Add(new SqliteParameter("@idPresupuesto", id));
             commandDetalles.ExecuteNonQuery();
@@ -101,37 +103,43 @@ public class PresupuestosRepository : IPresupuestosRepository
             connection.Close();
         }
     }
-    private List<PresupuestosDetalle> GetPresupuestosDetalles(int id)
+private List<PresupuestosDetalle> GetPresupuestosDetalles(int idPresupuesto)
+{
+    List<PresupuestosDetalle> presupuestosDetalles = new List<PresupuestosDetalle>();
+    string query = @"SELECT pd.idPresupuesto, pd.idProducto, pd.cantidad, p.Descripcion, p.Precio 
+                     FROM PresupuestosDetalle pd
+                     INNER JOIN Productos p ON p.idProducto = pd.idProducto
+                     WHERE pd.idPresupuesto = @idPresupuesto;";
+    using (SqliteConnection connection = new SqliteConnection(_stringConnection))
     {
-        List<PresupuestosDetalle> presupuestosDetalles = new List<PresupuestosDetalle>();
-        string query = @"SELECT idPresupuesto, idProducto, cantidad, p.Descripcion, p.Precio 
-                        FROM PresupuestosDetalle
-                        INNER JOIN Productos p USING (idProducto);";
-        using (SqliteConnection connection = new SqliteConnection(_stringConnection))
-        {
-            connection.Open();
-            SqliteCommand command = new SqliteCommand(query, connection);
-            command.Parameters.Add(new SqliteParameter("@idPresupuesto", id));
-            using (SqliteDataReader reader = command.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    int idProducto;
-                    string descripcion;
-                    int Precio;
-                    Productos producto = new Productos(
-                        idProducto = reader.GetInt32(0),
-                        descripcion = reader.GetString(1),
-                        Precio = reader.GetInt32(2));
+        connection.Open();
+        SqliteCommand command = new SqliteCommand(query, connection);
+        command.Parameters.Add(new SqliteParameter("@idPresupuesto", idPresupuesto)); // Asegúrate de usar idPresupuesto
 
-                    int cantidad = reader.GetInt32(3);
-                    presupuestosDetalles.Add(new PresupuestosDetalle(cantidad, producto));
-                }
+        using (SqliteDataReader reader = command.ExecuteReader())
+        {
+            while (reader.Read())
+            {
+                // Obtener los valores de la consulta
+                int idProducto = reader.GetInt32(1); // idProducto está en la posición 1
+                string descripcion = reader.GetString(3); // Descripcion está en la posición 3
+                int precio = reader.GetInt32(4); // Precio está en la posición 4
+
+                // Crear el objeto Producto
+                Productos producto = new Productos(idProducto, descripcion, precio);
+
+                // Obtener la cantidad
+                int cantidad = reader.GetInt32(2); // cantidad está en la posición 2
+
+                // Crear el objeto PresupuestosDetalle
+                presupuestosDetalles.Add(new PresupuestosDetalle(cantidad, producto));
             }
-            connection.Close();
         }
-        return presupuestosDetalles;
+        connection.Close();
     }
+    return presupuestosDetalles;
+}
+
     public void AddProductToPresupuesto(int idPresupuesto, int idProducto, int cantidad)
     {
         string query = @"INSERT INTO PresupuestosDetalle (idPresupuesto, idProducto, cantidad)
