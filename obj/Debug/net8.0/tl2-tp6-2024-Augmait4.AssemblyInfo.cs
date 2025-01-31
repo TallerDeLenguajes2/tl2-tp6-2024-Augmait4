@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("tl2-tp6-2024-Augmait4")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8af0e5aba4d1c804cd529ac4213604d4a3217ff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b983d6915decb891d1676f85258e5610798a1f24")]
 [assembly: System.Reflection.AssemblyProductAttribute("tl2-tp6-2024-Augmait4")]
 [assembly: System.Reflection.AssemblyTitleAttribute("tl2-tp6-2024-Augmait4")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -8,9 +8,10 @@ public class Presupuestos
     {
 
     }
-    public Presupuestos(int idPresupuesto, string nombreDestinatario)
+    public Presupuestos(int idPresupuesto, Cliente cliente)
     {
         this.IdPresupuesto = idPresupuesto;
+        this.Cliente = cliente;
     }
     public int IdPresupuesto { get => idPresupuesto; set => idPresupuesto = value; }
     public List<PresupuestosDetalle> Detalle { get => detalle; set => detalle = value; }

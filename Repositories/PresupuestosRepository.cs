@@ -28,7 +28,9 @@ public class PresupuestosRepository : IPresupuestosRepository
     public List<Presupuestos> GetAll()
     {
         List<Presupuestos> presupuestos = new List<Presupuestos>();
-        string query = @"SELECT p.idPresupuesto, c.ClienteId, c.nombre FROM Presupuestos;";
+        string query = @"SELECT p.idPresupuesto, c.ClienteId, c.Nombre, c.Email, c.Telefono 
+                        FROM Presupuestos p
+                        JOIN Cliente c ON c.ClienteId = p.ClienteId;";
         using (SqliteConnection connection = new SqliteConnection(_stringConnection))
         {
             connection.Open();
@@ -38,7 +40,13 @@ public class PresupuestosRepository : IPresupuestosRepository
                 while (reader.Read())
                 {
                     int idPresupuesto = reader.GetInt32(0);
-                    Presupuestos presupuesto = new Presupuestos(idPresupuesto);
+                    int ClienteId = reader.GetInt32(1);
+                    string Nombre = reader.GetString(2);
+                    string Email = reader.GetString(3);
+                    string Telefono = reader.GetString(4);
+
+                    Cliente cliente = new Cliente(ClienteId,Nombre,Email,Telefono);
+                    Presupuestos presupuesto = new Presupuestos(idPresupuesto, cliente);
                     presupuesto.Detalle = GetPresupuestosDetalles(idPresupuesto);
                     presupuestos.Add(presupuesto);
                 }
