@@ -1,7 +1,7 @@
 public class Presupuestos
 {
     private int idPresupuesto;
-    private string nombreDestinatario;
+    private Cliente cliente;
     private List<PresupuestosDetalle> detalle = new List<PresupuestosDetalle>();
     private const double IVA = 0.21;
     public Presupuestos()
@@ -11,11 +11,11 @@ public class Presupuestos
     public Presupuestos(int idPresupuesto, string nombreDestinatario)
     {
         this.IdPresupuesto = idPresupuesto;
-        this.NombreDestinatario = nombreDestinatario;
     }
     public int IdPresupuesto { get => idPresupuesto; set => idPresupuesto = value; }
-    public string NombreDestinatario { get => nombreDestinatario; set => nombreDestinatario = value; }
     public List<PresupuestosDetalle> Detalle { get => detalle; set => detalle = value; }
+    internal Cliente Cliente { get => cliente; set => cliente = value; }
+
     public decimal MontoPresupuesto()
     {
         decimal monto = 0;
